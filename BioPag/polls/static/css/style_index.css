@@ -1,0 +1,80 @@
+body {
+    background-color: #569834;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .phone {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+    height: 630px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .screen {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  i{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: rgb(23, 194, 8);
+    color: white;
+    font-size: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo{
+    background-color: transparent;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  i:hover{
+    background-color: rgb(22, 175, 8);
+    color: rgb(236, 236, 236);
+  }
+
+#btn-newCompra{
+  display: block;
+  width: 330px;
+  height: 70px;
+  font-size: 30px;
+  background-color: #569834;
+  color: white;
+  border-radius: 8px;
+  border-color: #1b1b1b;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#btn-newCompra:hover{
+  background-color: #4a832d;
+}

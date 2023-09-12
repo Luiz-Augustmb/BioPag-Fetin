@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Inserção do Favicon -->
+  <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
+  <title>Forma de Pagamento</title>
+  <!-- CSS Bootsratp -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS da página -->
+  <link rel="stylesheet" href="{% static 'css/opcao_pagamento.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="phone">
+      <div class="screen">
+        <h2>Selecione uma opção de pagamento:</h2>
+        <div class="payment-options">
+            <a href="{% url 'forma_Pagamento' %}" onclick="opcaoSelecionada('credito', '12')">
+              <button class="btn btn-primary btn-lg" id="btn-credito">Crédito</button>
+            </a>
+            <a href="{% url 'verifica_Digital' %}" onclick="opcaoSelecionada('debito', '0')">
+              <button class="btn btn-primary btn-lg" id="btn-debito">Débito</button>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- JavaScript do Boostrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Página JS -->
+  <script src="{% static 'js/scipt_opcaoPagamento.js' %}"></script>
+</body>
+</html>

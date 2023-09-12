@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Inserção do Favicon -->
+  <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
+  <title>Validação de Digital</title>
+  <!-- CSS Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!--Bootstrap Icons-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- CSS da página -->
+  <link rel="stylesheet" href="{% static 'css/verifica_DigitalStyle.css' %}">
+  <!-- Importar jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.get("/verify_fingerprint/", function (data) {
+                if (data.valid) {
+                    window.location.href = "{% url 'pag_Aprovado' %}";
+                } else {
+                    window.location.href = "{% url 'pag_Negado' %}";
+                }
+            }).fail(function () {
+                alert("Erro na leitura biométrica. Por favor, tente novamente.");
+            });
+        });
+    </script>
+</head>
+<body>
+  <div class="container">
+    <div class="phone">
+      <div class="screen">
+        <h2>APROXIME O DEDO DO SENSOR</h2>
+        <div class="fingerprint_Video">
+            <img src="{% static 'videos/fingerprint_Animation_Medio.gif' %}">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- JavaScript do Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript da página -->
+  <script src="{% static 'js/verifica_digital.js' %}"></script>
+</body>
+</html>
