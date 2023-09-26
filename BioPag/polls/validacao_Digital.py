@@ -1,3 +1,5 @@
+import time
+
 import serial
 import django
 
@@ -28,9 +30,12 @@ if __name__ == "__main__":
 
     try:
         while True:
+            ser.write(b'E')
             data = read_data(ser)
             if data:
                 print("Dados recebidos:", data)
+
+
     except KeyboardInterrupt:
         print("\nPrograma encerrado pelo usuário.")
     finally:

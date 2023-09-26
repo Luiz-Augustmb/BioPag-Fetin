@@ -19,14 +19,13 @@ function calculateParcela(parcelas) {
 
     if (!isNaN(valorNumerico)) {
       let displayText = '';
-
       if (parcelas === 1) {
         // Exibir o valor total da compra à vista
         const valorTotal = `R$ ${valorNumerico.toFixed(2).replace(".", ",")}`;
         displayText = `<span class="valor-option">${valorTotal}</span> <span class="parcela-option">à vista</span>`;
-
+        console.log("Parcelas: " + parcelas)
         // Armazenar a opção e o valor total no Local Storage
-        localStorage.setItem('opcaoParcelamento', 'à vista');
+        localStorage.setItem('opcaoParcelamento', 1);
         localStorage.setItem('valorParcelamento', valorTotal);
       } else if (parcelas > 1) {
         // Exibir o valor da parcela escolhida
@@ -34,10 +33,11 @@ function calculateParcela(parcelas) {
         const valorDisplay = `R$ ${valorParcela.toFixed(2).replace(".", ",")}`;
         const parcelaDisplay = `${parcelas}x`;
         displayText = `<span class="valor-option">${valorDisplay}</span> <span class="parcela-option">${parcelaDisplay}</span>`;
-
+        console.log("Valor parcela: " + valorParcela.toFixed(2))
+        console.log("Parcelas: " + parcelas)
         // Armazenar a opção e o valor da parcela no Local Storage
         localStorage.setItem('opcaoParcelamento', parcelaDisplay);
-        localStorage.setItem('valorParcelamento', 'valorParcela');
+        localStorage.setItem('valorParcelamento', valorParcela.toFixed(2));
       } else {
         displayText = "Número de parcelas inválido";
       }

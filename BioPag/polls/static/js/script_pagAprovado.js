@@ -21,16 +21,18 @@ window.onload = function() {
 // Credito ou Débito
 // Obtém a opção e a quantidade de parcelas selecionadas do Local Storage
 const opcao = localStorage.getItem('opcaoSelecionada');
-const parcelas = localStorage.getItem('parcelasSelecionadas');
+const parcelas = localStorage.getItem('opcaoParcelamento');
 const valorParcela = localStorage.getItem('valorParcelamento');
 
 // Exibe a opção selecionada na página
 const divOpcaoSelecionada = document.getElementById('opcaoSelecionada');
 if (opcao === 'credito') {
+    console.log("Parcelas: " + parcelas)
     if (parcelas === '1') {
-        divOpcaoSelecionada.textContent = `Crédito - R$${valorParcela} à vista`;
+        divOpcaoSelecionada.textContent = `Crédito - ${valorParcela} à vista`;
     } else {
-        divOpcaoSelecionada.textContent = `Crédito - R$${valorParcela.toFixed(2).replace(".", ",")} parcelado em ${parcelas}x`;
+        console.log(valorParcela)
+        divOpcaoSelecionada.textContent = `Crédito - R$${valorParcela.replace(".", ",")} parcelado em ${parcelas}`;
     }
 } else if (opcao === 'debito') {
       divOpcaoSelecionada.textContent = 'Débito';

@@ -32,43 +32,19 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
   }
 
-  h1 {
+  h1{
     text-align: center;
   }
 
-  .approval-status {
-    position: relative;
-    display: block;
-    align-items: center;
-    justify-content: center;
-    background-color: #da0c0c;
-    color: #ffffff;
-    padding: 50px;
-    height: 100%;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  #display{
+    font-size: 20px;
   }
 
-  .approval-status i {
-    font-size: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  #valorDigitado{
+    width: 100%;
+    height: 40px;
   }
 
-#btn-tentarNovamente{
-  width: 100%;
-  height: 70px;
-  font-size: 30px;
-  background-color: #569834;
-  color: white;
-  border-radius: 8px;
-  border-color: transparent;
-  border-width: 0.01px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-#btn-tentarNovamente:hover{
-  background-color: #4a832d;
-}

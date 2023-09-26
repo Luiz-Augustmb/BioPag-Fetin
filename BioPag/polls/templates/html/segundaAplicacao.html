@@ -1,4 +1,4 @@
-{% load static %}
+<!-- {% load static %} -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,30 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Inserção do Favicon -->
   <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
-  <title>Validação de Digital</title>
+  <title>BioPag</title>
   <!-- CSS Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
    <!--Bootstrap Icons-->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <!-- CSS da página -->
-  <link rel="stylesheet" href="{% static 'css/verifica_DigitalStyle.css' %}">
-  <!-- Importar jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="../../static/css/style_segundaAplicacao.css">
 </head>
 <body>
   <div class="container">
     <div class="phone">
       <div class="screen">
-        <h2>APROXIME O DEDO DO SENSOR</h2>
-        <div class="fingerprint_Video">
-            <img src="{% static 'videos/fingerprint_Animation_Medio.gif' %}">
-        </div>
+          <a href="{% url 'cadastroDigital' %}" >
+              <button type="button" id="cadastrarDigital" class="btn btn-primary btn-lg">Cadastrar Impressão Digital</button>
+          </a>
+          <a href="{% url 'deletaDigital' %}" >
+            <button type="button" id="deletaDigital" class="btn btn-primary btn-lg">Remover Impressão Digital</button>
+          </a>
+          <button  id = "limpaBancoButton" class="btn btn-primary btn-lg">Esvaziar Banco de Dados</button>
+      </form>
       </div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- JavaScript do Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- JavaScript da página -->
-  <script src="{% static 'js/verifica_digital.js' %}"></script>
+  <!-- Página JS -->
+  <script src="{% static 'js/segundaAplicacao.js' %}"></script>
+
 </body>
 </html>

@@ -19,7 +19,9 @@
     <div class="phone">
       <div class="screen">
         <h1>BEM VINDO!</h1>
-        <img src="{% static 'images/logo-semFundo.png' %}" class="logo">
+          <a href="{% url 'segundaAplicacao' %}" >
+            <img src="{% static 'images/logo-semFundo.png' %}" class="logo">
+          </a>
           <a href="{% url 'entrada_Valor' %}">
             <button class="btn btn-primary btn-lg" id="btn-newCompra" >Nova Compra</button>
           </a>

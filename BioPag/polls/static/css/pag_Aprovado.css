@@ -86,16 +86,29 @@ h3 {
 }
 
 #btn-newCompra{
-  display: block;
   width: 100%;
   height: 70px;
   font-size: 30px;
   background-color: #569834;
   color: white;
   border-radius: 8px;
+  border-color: transparent;
+  border-width: 0.01px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 #btn-newCompra:hover{
   background-color: #4a832d;
+}
+
+#valor-Compra{
+  color: black;
+  font-size: 30px;
+}
+
+#opcaoSelecionada{
+  font-size: 20px;
+}
+#dataHora{
+  font-size: 15px;
 }
